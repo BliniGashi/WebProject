@@ -22,9 +22,9 @@
                 <div class="navmenu" id="nav-menu">
                     <ul class="navlist">
                         <li class="navitem"><a href="#home" class="navlink active">Home</a></li>
-                        <li class="navitem"><a href="#about" class="navlink">About</a></li>
-                        <li class="navitem"><a href="#skills" class="navlink">Skills</a></li>
-                        <li class="navitem"><a href="#work" class="navlink">Work</a></li>
+                        <li class="navitem"><a href="#about" class="navlink ">About</a></li>
+                        <li class="navitem"><a href="#skills" class="navlink ">Skills</a></li>
+                        <li class="navitem"><a href="#work" class="navlink ">Work</a></li>
                         <li class="navitem"><a href="#newsletter" class="navlink">News Letter</a></li>
                         <li class="navitem"><a href="http://localhost/WEB/html/workwithme.php" class="navlink">Work With Me</a></li>
                     </ul>
@@ -162,15 +162,46 @@
                 </a>
             </div>
         </section>
+        <?php 
+echo '<script type="text/JavaScript"> 
+function validateform1(){
+    var username = document.form.username.value;
+    var email = document.form.email.value;
+    
+    
+    if(username == null || username == "") {
+        alert("Username must be filled");
+        return false;
+    }
+        else if(username.length < 5){
+            alert("Username must be at least 5 characters long");
+            return false;
+            }
 
+     else if(email == null || email == ""){
+        alert("Email must be filled");
+        return false;
+        }
+        else{
+            alert("Successful submission!");
+            location.reload();
+        }
+
+    }
+     </script>'
+;
+?>
         <!--pjesa e formes-->
         <section class="signup section" id="newsletter">
             <h2 class="section-title">Sign up to newsletter</h2>
         
            
             <div class="signupcontainer grid">
-                <form name="form" class="signupform" id="form" action="http://localhost/send1.php" method="post">
-                    <input type="text" placeholder="User Name" class="signupinput" id="username" name="username">
+                <form name="form" class="signupform" id="form" action="http://localhost/WEB/php/send1.php" method="post">
+                    <?php if (isset($_GET['error1'])) { ?>
+                <p class="error" style="color:red"><?php echo $_GET['error1']; ?></p>
+            <?php } ?>
+                    <input type="text" placeholder="Full Name" class="signupinput" id="name" name="name">
                     <input type="mail" placeholder="Email" class="signupinput" id="email" name="email">
                     <p>By clicking submit you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p> <br>
                     <button class="submitbutton button"type="submit" name="submit" onclick="return validateform1()">Submit</button>

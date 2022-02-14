@@ -20,12 +20,12 @@
 
                 <div class="navmenu" id="nav-menu">
                     <ul class="navlist">
-                        <li class="navitem"><a href="http://localhost/WEB/html/"class="navlink">Home</a></li>
-                        <li class="navitem"><a href="http://localhost/WEB/html/" class="navlink">About</a></li>
-                        <li class="navitem"><a href="http://localhost/WEB/html/" class="navlink">Skills</a></li>
-                        <li class="navitem"><a href="http://localhost/WEB/html/" class="navlink">Work</a></li>
-                        <li class="navitem"><a href="http://localhost/WEB/html/" class="navlink">News Letter</a></li>
-                        <li class="navitem"><a href="http://localhost/WEB/html/" class="navlink active">Work With Me</a></li>
+                        <li class="navitem"><a href="http://localhost/WEB/html/#home"class="navlink">Home</a></li>
+                        <li class="navitem"><a href="http://localhost/WEB/html/#about" class="navlink">About</a></li>
+                        <li class="navitem"><a href="http://localhost/WEB/html/#skills" class="navlink">Skills</a></li>
+                        <li class="navitem"><a href="http://localhost/WEB/html/#work" class="navlink">Work</a></li>
+                        <li class="navitem"><a href="http://localhost/WEB/html/#newsletter" class="navlink">News Letter</a></li>
+                        <li class="navitem"><a href="#" class="navlink active">Work With Me</a></li>
                     </ul>
                 </div>
 
@@ -96,9 +96,9 @@
     /* Fading animation */
     .fade {
       -webkit-animation-name: fade;
-      -webkit-animation-duration: 1.5s;
+      -webkit-animation-duration: 3s;
       animation-name: fade;
-      animation-duration: 1.5s;
+      animation-duration: 3s;
     }
     
     @-webkit-keyframes fade {
@@ -230,10 +230,6 @@ echo '<script type="text/JavaScript">
                           alert("Passwords must match!");
                       }
           
-                      else{
-                          alert("Successful submission!");
-                          location.reload();
-                      }
               }
           
      </script>'
@@ -247,6 +243,9 @@ echo '<script type="text/JavaScript">
       </div>
         <div class="signupcontainer grid"> 
             <form name="form1" class="signupform" id="form" action="http://localhost/WEB/php/signup.php" method="post">
+              <?php if (isset($_GET['error4'])) { ?>
+                <p class="error" style="color:red"><?php echo $_GET['error4']; ?></p>
+            <?php } ?>
                 <input type="text" placeholder="Name" class="signupinput" id="name" name="name">
                 <input type="text" placeholder="User Name" class="signupinput" id="username1" name="username">
                 <input type="mail" placeholder="Email" class="signupinput" id="email" name="email">
@@ -291,8 +290,6 @@ echo '<script type="text/JavaScript">
                 <br>
                 <button id="submit1" class="submitbutton button" type="submit" name="submit1">Log In</button>
             </form>
-
-
         </div>
     </section> 
     

@@ -558,4 +558,129 @@ img {
   column-gap: 2rem;
 }
 }
+/*home page*/
 
+.logoutbutton{
+  background-color: var(--first-color);
+  padding: .75rem 2.5rem;
+  font-weight: var(--font-semi);
+  border-radius: .5rem;
+}
+
+.workrequest-conatiner {
+  justify-items: center;
+}
+.hello-title {
+  position: relative;
+  font-size: var(--h2-font-size);
+  color: black;
+  margin-top: var(--mb-2);
+  text-align: center;
+}
+
+.pick-title {
+  position: relative;
+  font-size: var(--h2-font-size);
+  color: var(--first-color);
+  text-align: center;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+.row {
+  display:block;
+  margin-left: 150px;
+  margin-right: auto;
+  width: 100%;
+}
+.section-title{
+  position: relative;
+  font-size: var(--h2-font-size);
+  color: var(--first-color);
+  margin-bottom: var(--mb-4);
+  text-align: center;
+}
+.service-title {
+  position: relative;
+  font-size: var(--h2-font-size);
+  color: black;
+  margin-bottom: var(--mb-4);
+  text-align: center;
+}
+.service-title::after {
+  position: absolute;
+  content: '';
+  width: 64px;
+  height: 0.18rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: black;
+}
+.service-title {
+  margin-bottom: var(--mb-6);
+}
+.service-title::after {
+  width: 80px;
+  top: 3rem;
+}
+.datecalendar{
+  text-align: center;
+  width:220px;
+  height:100px;
+}
+
+.submitbutton4 {
+  margin: 0;
+  position: absolute;
+  top: 260%;
+  left: 40%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.logoutbutton {
+  margin: 0;
+  position: absolute;
+  top: 260%;
+  left: 61%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.button4 {
+  display: inline-block;
+  background-color: var(--first-color);
+  color: #fff;
+  padding: 1.0rem 3.5rem;
+  font-weight: var(--font-semi);
+  border-radius: .5rem;
+  transition: .3s;
+  border-style: none;
+}
+.button5 {
+  display: inline-block;
+  background-color: lightblue;
+  color: #fff;
+  padding: .75rem 6.5rem;
+  font-weight: var(--font-semi);
+  border-radius: .5rem;
+  transition: .3s;
+}
+.labeltext{
+  margin: 0;
+  position: absolute;
+  top: 260%;
+  left: 50.2%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.work-footer {
+  background-color: var(--second-color);
+  color: #fff;
+  text-align: center;
+  font-weight: var(--font-semi);
+  padding: 2rem 0;
+  margin-bottom: 0;
+}

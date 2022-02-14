@@ -14,13 +14,14 @@ $email = $_POST['email'];
 $password = $_POST['password1'];
 $gender = $_POST['checkbutton'];
 
-$qry = "INSERT INTO `signinusers` (`userName`, `eMail`, `password`,`name`, `gender`) VALUES ( '$username', '$email', '$password','$name', '$gender')";
-$insert  = mysqli_query($con,$qry);
-if(!$insert){
-    echo "There is some problem while insertings";
+$sql = "SELECT * FROM `signinusers` WHERE userName='$username' AND eMail='$email'";
+$result = mysqli_query($con, $sql);
+if (mysqli_num_rows($result) === 0){
+    $qry = "INSERT INTO `signinusers` (`userName`, `eMail`, `password`,`name`, `gender`) VALUES ( '$username', '$email', '$password','$name', '$gender')";
+    $insert  = mysqli_query($con,$qry);
+    header("Location: http://localhost/WEB/html/workwithme.php?error=Successful Submission!"); 
 }
 else{
-header("Location: http://localhost/WEB/html/workwithme.php");
-    exit; 
-}   
+    header("Location: http://localhost/WEB/html/workwithme.php?error=User aleready exists, please try again!");
+} 
 ?>

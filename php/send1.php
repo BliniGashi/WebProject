@@ -9,15 +9,27 @@ if(!$con){
     echo "There were some problems while connecting";
 }
 
-$username = $_POST['username'];
+$name = $_POST['name'];
 $email = $_POST['email'];
 
-$qry = "INSERT INTO `usersn`(`userName`, `eMail`) VALUES ('$username','$email')";
-$insert  = mysqli_query($con,$qry);
-if(!$insert){
-    echo "There is some problem while insertings";
+
+if (empty($name)) {
+    header("Location: http://localhost/WEB/html/index.php?error1=Username is required");
+}else if(empty($email)){
+    header("Location: http://localhost/WEB/html/index.php?error1=Email is required");
+}
+
+else{
+$sql = "SELECT * FROM `usersn` WHERE eMail='$email'";
+$result = mysqli_query($con, $sql);
+if (mysqli_num_rows($result) === 0){
+    $qry = "INSERT INTO `usersn`(`userName`, `eMail`) VALUES ('$name','$email')";
+    $insert  = mysqli_query($con,$qry);
+    header("Location: http://localhost/WEB/html/index.php?error1=Successful Submission");
 }
 else{
-    header("Location: http://127.0.0.1:5500/html/index.html");
+    header("Location: http://localhost/WEB/html/index.php?error1=User aleready exists!");
 }
+}
+
 ?>
