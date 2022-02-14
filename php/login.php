@@ -10,6 +10,7 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
     }
     $uname = validate($_POST['uname']);
     $pass = validate($_POST['password']);
+    
     if (empty($uname)) {
         header("Location: http://localhost/WEB/html/workwithme.php?error=User Name is required");
         

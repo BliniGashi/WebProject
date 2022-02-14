@@ -634,9 +634,10 @@ img {
 }
 
 .submitbutton4 {
+  
   margin: 0;
   position: absolute;
-  top: 260%;
+  top: 275%;
   left: 40%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -644,7 +645,7 @@ img {
 .logoutbutton {
   margin: 0;
   position: absolute;
-  top: 260%;
+  top: 275%;
   left: 61%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -671,7 +672,7 @@ img {
 .labeltext{
   margin: 0;
   position: absolute;
-  top: 260%;
+  top: 275%;
   left: 50.2%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -683,4 +684,10 @@ img {
   font-weight: var(--font-semi);
   padding: 2rem 0;
   margin-bottom: 0;
+}
+.workgrid {
+  max-width: 1000px;
+  display: inline;
+  margin-left: 100px;
+  margin-right: var(--mb-2);
 }
